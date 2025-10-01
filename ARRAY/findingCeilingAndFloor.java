@@ -36,7 +36,7 @@ public class findingCeilingAndFloor {
             if(arr[mid]==target){
                 return mid;
             }
-            else if(arr[mid]<target){
+            else if(arr[mid]<target){   
                 start=mid+1;
             }
             else{
