@@ -1,10 +1,14 @@
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class findingFirstAndLastPositionOfElement {
     
     // mian method
     public static void main(String[] args) {
         int[] arr1 = {1,3,4,6,7,8,12,12,14};
         int tar = 12;
-        System.out.println(searchRange(arr1,tar)); 
+        int[] result = searchRange(arr1, tar);
+        System.out.println(Arrays.toString (result)); 
     }
      static int[] searchRange(int[] nums, int target) {
         int[] ans = {-1,-1};
@@ -18,7 +22,7 @@ public class findingFirstAndLastPositionOfElement {
         int start = 0;
         int n = arr.length;
         int end = n-1;
-        int ans = 0;
+        int ans = -1;
         while(start<=end){
             int mid = start+(end-start)/2;
             if(arr[mid]<target){
