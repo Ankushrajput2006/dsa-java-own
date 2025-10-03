@@ -1,12 +1,14 @@
-import java.util.Arrays;
+//package CycleSort;
 
-public class CycleSort {
+import java.util.ArrayList;
+import java.util.List;
+
+public class FindAllDublicates {
     public static void main(String[] args) {
         int[] arr1 = {4,3,2,7,8,2,3,1};
-        cycle(arr1);
-        System.out.println(Arrays.toString(arr1));
+        System.out.println(cycle(arr1));
     }
-    static void cycle(int[] arr){
+    static List<Integer> cycle(int[] arr){
         int n = arr.length;
         int i = 0;
         while (i<n) {
@@ -20,5 +22,13 @@ public class CycleSort {
                 i++;
             }
         }
+        List<Integer> ans = new ArrayList<>();
+        for (int j = 0; j < arr.length; j++) {
+            if(arr[j]!=j+1){
+                ans.add(arr[j]);
+            }
+        }
+        
+        return ans;
     }
 }
