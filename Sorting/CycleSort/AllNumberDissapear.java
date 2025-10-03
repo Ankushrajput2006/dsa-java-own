@@ -1,0 +1,35 @@
+//package CycleSort;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class AllNumberDissapear {
+    public static void main(String[] args) {
+        int[] arr1 = {4,3,2,7,8,2,3,1};
+        System.out.println(dissapear(arr1));
+    }
+    public static List<Integer> dissapear(int[] arr){
+     int n = arr.length;
+        int i = 0;
+
+        while (i < n) {
+            int correct = arr[i] - 1;
+            if (arr[i] >= 1 && arr[i] <= n && arr[i] != arr[correct]) {
+                int temp = arr[i];
+                arr[i] = arr[correct];
+                arr[correct] = temp;
+            } else {
+                i++;
+            }
+        }
+
+        List<Integer> ans = new ArrayList<>();
+
+        for (int j = 0; j < arr.length; j++) {
+            if (arr[j] != j + 1) {
+                ans.add(j + 1);
+            }
+        }
+
+        return ans;
+    }}
